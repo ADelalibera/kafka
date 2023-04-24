@@ -1,0 +1,3 @@
+@echo off
+@echo Subir kafka...
+call kafka-server-start.bat C:\kafka\config\server.properties

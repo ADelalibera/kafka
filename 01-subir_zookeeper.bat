@@ -1,0 +1,3 @@
+@echo off
+@echo Subir zookeeper...
+call zookeeper-server-start.bat C:\kafka\config\zookeeper.properties
