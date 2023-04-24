@@ -1,0 +1,63 @@
+::containers em execução
+docker ps
+<or>
+docker container ls
+
+::historico de execução dos containers
+docker ps -a
+
+::executar um container
+docker run Ubuntu -sleep 1500
+<or>
+docker container run ubuntu sleep 10
+
+::parar um container em execução pelo 'Names' do container
+docker stop compassionate_boh
+
+::acessar container no modo 'interagir' -it
+docker run -it ubuntu
+
+::dentro do container 'ubuntu' - executar comando linux
+cat /etc/*release*
+
+::Executar container em background e retornar o ID do container
+docker run -dti ubuntu
+>eba37b49a57e3df858e60d139350e806bbdfae7fcc73dd2c25018800345f2566
+>CONTAINER ID
+>eba37b49a57e
+
+::acessar um container (by ID) no modo interativo e executar um comando bash
+docker exec -it eba37b49a57e /bin/bash
+
+::para instalar o nano precisa atualizar as dependencias/repositorios do ubuntu
+apt update
+
+::para confirmar atualização das dependencias/repositorios do ubuntu
+apt upgrade -y
+
+:: instalar o nano editor
+apt -y install nano
+
+:: testar o nano
+nano arquivo.txt
+>ctrl+x -> sair do nano
+
+:: sair do bash do container linux (exit)
+root@eba37b49a57e:/# exit
+ale@Vostro:~$
+
+:: executar um coutro comando no container linux
+docker exec -it eba37b49a57e cat /etc/*release*
+
+::parar o container (by ID = eba37b49a57e) que está em execução
+docker stop eba37b49a57e
+>eba37b49a57e
+
+::remover container (by ID = eba37b49a57e) que não serão mais utilizados
+docker rm eba37b49a57e
+
+
+
+
+
+
